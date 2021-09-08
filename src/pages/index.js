@@ -95,7 +95,7 @@ const IndexPage = ({data}) => {
                 key={node.id}
                 title={node.frontmatter.title}
                 desc={node.frontmatter.description}
-                link={node.slug}
+                link={node.frontmatter.link}
                 icon={ProfileAvatar}
             />
         ))
