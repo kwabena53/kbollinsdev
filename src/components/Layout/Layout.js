@@ -1,22 +1,21 @@
 
 import * as React from 'react'
 import {} from "./Layout.module.css"
-import { Link } from 'gatsby'
+
+const pageStyles = {
+  color: "#232129",
+  padding: 3,
+  margin: "auto",
+  textAlign: "left",
+  maxWidth: 540,
+  fontFamily: "-apple-system, Roboto, sans-serif, serif",
+}
 const Layout = ({ pageTitle, children }) => {
   return (
-    <div>
-      <title>{pageTitle}</title>
-      <nav>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-        </ul>
-      </nav>
-      <main className={pageStyles} >
+      <main style={pageStyles} >
         <h1>{pageTitle}</h1>
         {children}
       </main>
-    </div>
   )
 }
 export default Layout

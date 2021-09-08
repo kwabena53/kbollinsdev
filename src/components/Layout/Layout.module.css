@@ -1,7 +1,8 @@
 .pageStyles {
-    color: "#232129";
-    padding: 3;
-    margin: "auto";
-    text-align: "left";
-    max-width: 540;
-  }
+  color: "#232129";
+  padding: 3;
+  margin: "auto";
+  text-align: "left";
+  max-width: 540;
+  font-family: "-apple-system, Roboto, sans-serif, serif";
+}

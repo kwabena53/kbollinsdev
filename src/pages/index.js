@@ -1,6 +1,7 @@
 import * as React from "react"
 import ProfileAvatar from "../asset/kwabs-moji.png"
 import ProjectCard from "../components/ProjectCard/ProjectCard"
+import { graphql } from "gatsby"
 
 
 // styles
@@ -55,7 +56,7 @@ const Styles = {
     backgroundColor: "#E8F7FA",
     minHeight: "400px",
     borderRadius: 5,
-    padding: window.innerWidth > 768 ? 30 : 1,
+    padding: 1,
   },
 
 
@@ -64,7 +65,7 @@ const Styles = {
 
 
 
-const IndexPage = () => {
+const IndexPage = ({data}) => {
   return (
     <main style={Styles.pageStyles}>
       <title>K-Bollins Dev</title>
@@ -84,13 +85,42 @@ const IndexPage = () => {
       </div>
       <h2 style={Styles.projectTitle}>Projects</h2>
       <div style={Styles.projectContent}>
-        <ProjectCard title="Auto Vet" desc="in the middle attackmain in the middle attackmain in the middle attackmain in the middle attack" icon={ProfileAvatar} alt="Auto vet project" />
+        {/* <ProjectCard title="Auto Vet" desc="in the middle attackmain in the middle attackmain in the middle attackmain in the middle attack" icon={ProfileAvatar} alt="Auto vet project" />
         <ProjectCard title="Auto Vet" desc=" in the middle attackmain in the middle attackmain in the middle attackmain in the middle attack" icon={ProfileAvatar} alt="Auto vet project" />
-        <ProjectCard title="Auto Vet" desc="main in the middle attack" icon={ProfileAvatar} alt="Auto vet project" />
+        <ProjectCard title="Auto Vet" desc="main in the middle attack" icon={ProfileAvatar} alt="Auto vet project" /> */}
+
+        {
+          data.allMdx.nodes.map((node) => (
+            <ProjectCard
+                key={node.id}
+                title={node.frontmatter.title}
+                desc={node.frontmatter.description}
+                link={node.slug}
+                icon={ProfileAvatar}
+            />
+        ))
+        }
 
       </div>
     </main>
   )
 }
+
+export const query = graphql`
+query{
+  allMdx {
+    nodes {
+      frontmatter {
+        date
+        link
+        title
+        description
+      },
+      id,
+      slug
+    }
+  }
+}`
+
 
 export default IndexPage
