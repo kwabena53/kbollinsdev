@@ -96,7 +96,7 @@ const IndexPage = ({data}) => {
                 title={node.frontmatter.title}
                 desc={node.frontmatter.description}
                 link={node.frontmatter.link}
-                icon={ProfileAvatar}
+                // icon={ProfileAvatar}
             />
         ))
         }

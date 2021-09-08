@@ -25,11 +25,13 @@
         margin: 1em;
 
 }
-.icon{
-    margin: 1em;
-    flex: 0 0 30%;
-    display: flex important!;
+.iconStyles{
+    display: flex;
     align-items: center;
+    justify-content: center;
+    /* margin: auto; */
+    flex: 0 0 20%;
+    
 }
 
 .textContent{

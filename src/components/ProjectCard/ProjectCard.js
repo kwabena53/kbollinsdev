@@ -1,15 +1,16 @@
 import React from "react"
 
-import {outerCard, cardDesc, cardTitle, innerCard, textContent} from "./ProjectCard.module.css"
+import {outerCard, cardDesc, cardTitle, innerCard, textContent, iconStyles} from "./ProjectCard.module.css"
+import { CheckIcon } from "../../asset/Icons"
 
-const ProjectCard = ({icon, title, desc, link}) => {
+const ProjectCard = ({ title, desc, link}) => {
 
     return(
         <a style={{textDecoration: "none"}} href={link} target="_blank" rel="noreferrer">
         <div className={outerCard}>
             <div className={innerCard}>
-                <div className={icon}>
-                    <img src={icon} width="100%" alt={desc}></img>
+                <div className={iconStyles}>
+                    <CheckIcon width="40px"/>
                 </div>
                 <div className={textContent}>
                     <div className={cardTitle}>{title}</div>
